@@ -1,10 +1,17 @@
 {
- "updated": "2026-09-30T19:21:32.269723+00:00",
- "institutes": 22,
+ "updated": "2026-09-30T19:39:39.609100+00:00",
+ "institutes": 23,
  "errors": {
-  "IIT Kharagpur": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
-  "IIT Jodhpur": "HTTPSConnectionPool(host='www.iitj.ac.in', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))",
-  "IIT Bhubaneswar": "HTTPSConnectionPool(host='www.iitbbs.ac.in', port=443): Read timed out. (read timeout=30)",
-  "IIT Bhilai": "HTTPSConnectionPool(host='www.iitbhilai.ac.in', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))"
+  "IIT Bombay": "404 Client Error: Not Found for url: https://www.iitb.ac.in/en/faculty/faculty-recruitment",
+  "IIT Guwahati": "404 Client Error: Not Found for url: https://www.iitg.ac.in/iitg_faculty_reqr",
+  "IIT Patna": "404 Client Error: Not Found for url: https://www.iitp.ac.in/index.php?id=583",
+  "IIT Jodhpur": "HTTPSConnectionPool(host='iitj.ac.in', port=443): Max retries exceeded with url: /faculty-positions/en/faculty-positions (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))",
+  "IIT Indore": "404 Client Error: Not Found for url: https://iiti.ac.in/recruitments/faculty_positions",
+  "IIT Mandi": "404 Client Error: Not Found for url: https://iitmandi.ac.in/careers.php",
+  "IIT (ISM) Dhanbad": "404 Client Error: Not Found for url: https://www.iitism.ac.in/ism_opening_main",
+  "IIT Bhilai": "HTTPSConnectionPool(host='www.iitbhilai.ac.in', port=443): Max retries exceeded with url: /index.php?pid=rec_faculty (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))",
+  "IIT Goa": "HTTPSConnectionPool(host='iitgoa.ac.in', port=443): Max retries exceeded with url: /faculty-position/ (Caused by NewConnectionError(\"HTTPSConnection(host='iitgoa.ac.in', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))",
+  "IIT Jammu": "HTTPSConnectionPool(host='iitjammu.ac.in', port=443): Max retries exceeded with url: /faculty-search-cum-selection (Caused by NameResolutionError(\"HTTPSConnection(host='iitjammu.ac.in', port=443): Failed to resolve 'iitjammu.ac.in' ([Errno -3] Temporary failure in name resolution)\"))",
+  "IIT Dharwad": "404 Client Error: Not Found for url: https://www.iitdh.ac.in/Faculty_recruitment.php"
  }
 }
