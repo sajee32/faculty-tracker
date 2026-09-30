@@ -1,156 +1,25 @@
 [
- {
-  "name": "IIT Bombay",
-  "group": "IIT",
-  "url": "https://www.iitb.ac.in/",
-  "follow": true,
-  "verified": false
- },
- {
-  "name": "IIT Delhi",
-  "group": "IIT",
-  "url": "https://www.iitd.ac.in/",
-  "follow": true,
-  "verified": false
- },
- {
-  "name": "IIT Madras",
-  "group": "IIT",
-  "url": "https://www.iitm.ac.in/",
-  "follow": true,
-  "verified": false
- },
- {
-  "name": "IIT Kanpur",
-  "group": "IIT",
-  "url": "https://www.iitk.ac.in/",
-  "follow": true,
-  "verified": false
- },
- {
-  "name": "IIT Kharagpur",
-  "group": "IIT",
-  "url": "https://www.iitkgp.ac.in/",
-  "follow": true,
-  "verified": false
- },
- {
-  "name": "IIT Roorkee",
-  "group": "IIT",
-  "url": "https://www.iitr.ac.in/",
-  "follow": true,
-  "verified": false
- },
- {
-  "name": "IIT Guwahati",
-  "group": "IIT",
-  "url": "https://www.iitg.ac.in/",
-  "follow": true,
-  "verified": false
- },
- {
-  "name": "IIT Hyderabad",
-  "group": "IIT",
-  "url": "https://www.iith.ac.in/",
-  "follow": true,
-  "verified": false
- },
- {
-  "name": "IIT Gandhinagar",
-  "group": "IIT",
-  "url": "https://www.iitgn.ac.in/",
-  "follow": true,
-  "verified": false
- },
- {
-  "name": "IIT Indore",
-  "group": "IIT",
-  "url": "https://www.iiti.ac.in/",
-  "follow": true,
-  "verified": false
- },
- {
-  "name": "IIT Jodhpur",
-  "group": "IIT",
-  "url": "https://www.iitj.ac.in/",
-  "follow": true,
-  "verified": false
- },
- {
-  "name": "IIT Mandi",
-  "group": "IIT",
-  "url": "https://www.iitmandi.ac.in/",
-  "follow": true,
-  "verified": false
- },
- {
-  "name": "IIT Ropar",
-  "group": "IIT",
-  "url": "https://www.iitrpr.ac.in/",
-  "follow": true,
-  "verified": false
- },
- {
-  "name": "IIT Patna",
-  "group": "IIT",
-  "url": "https://www.iitp.ac.in/",
-  "follow": true,
-  "verified": false
- },
- {
-  "name": "IIT Bhubaneswar",
-  "group": "IIT",
-  "url": "https://www.iitbbs.ac.in/",
-  "follow": true,
-  "verified": false
- },
- {
-  "name": "IIT BHU",
-  "group": "IIT",
-  "url": "https://www.iitbhu.ac.in/",
-  "follow": true,
-  "verified": false
- },
- {
-  "name": "IIT Dharwad",
-  "group": "IIT",
-  "url": "https://www.iitdh.ac.in/",
-  "follow": true,
-  "verified": false
- },
- {
-  "name": "IIT Goa",
-  "group": "IIT",
-  "url": "https://www.iitgoa.ac.in/",
-  "follow": true,
-  "verified": false
- },
- {
-  "name": "IIT Jammu",
-  "group": "IIT",
-  "url": "https://www.iitjammu.ac.in/",
-  "follow": true,
-  "verified": false
- },
- {
-  "name": "IIT Bhilai",
-  "group": "IIT",
-  "url": "https://www.iitbhilai.ac.in/",
-  "follow": true,
-  "verified": false
- },
- {
-  "name": "IIT Palakkad",
-  "group": "IIT",
-  "url": "https://www.iitpkd.ac.in/",
-  "follow": true,
-  "verified": false
- },
- {
-  "name": "IIT Tirupati",
-  "group": "IIT",
-  "url": "https://www.iittp.ac.in/",
-  "follow": true,
-  "verified": false
- }
+{"name":"IIT Kharagpur","group":"IIT","url":"https://erp.iitkgp.ac.in/Jobs/auth/facapps.htm","follow":false,"verified":true},
+{"name":"IIT Bombay","group":"IIT","url":"https://www.iitb.ac.in/en/faculty/faculty-recruitment","follow":false,"verified":true},
+{"name":"IIT Madras","group":"IIT","url":"https://facapp.iitm.ac.in/","follow":false,"verified":true},
+{"name":"IIT Kanpur","group":"IIT","url":"http://iitk.ac.in/dofa/rolling-advertisement","follow":false,"verified":true},
+{"name":"IIT Delhi","group":"IIT","url":"https://home.iitd.ac.in/jobs-iitd/index.php","follow":false,"verified":true},
+{"name":"IIT Guwahati","group":"IIT","url":"https://www.iitg.ac.in/iitg_faculty_reqr","follow":false,"verified":true},
+{"name":"IIT Roorkee","group":"IIT","url":"https://iitr.ac.in/Careers/Faculty%20Positions/index.html","follow":false,"verified":true},
+{"name":"IIT Bhubaneswar","group":"IIT","url":"https://www.iitbbs.ac.in/faculty-openings.php","follow":false,"verified":true},
+{"name":"IIT Hyderabad","group":"IIT","url":"https://iith.ac.in/careers/","follow":false,"verified":true},
+{"name":"IIT Patna","group":"IIT","url":"https://www.iitp.ac.in/index.php?id=583","follow":false,"verified":true},
+{"name":"IIT Gandhinagar","group":"IIT","url":"https://iitgn.ac.in/careers/faculty-rolling","follow":false,"verified":true},
+{"name":"IIT Jodhpur","group":"IIT","url":"https://iitj.ac.in/faculty-positions/en/faculty-positions","follow":false,"verified":true},
+{"name":"IIT Ropar","group":"IIT","url":"https://www.iitrpr.ac.in/jobs/faculty-positions","follow":false,"verified":true},
+{"name":"IIT Indore","group":"IIT","url":"https://iiti.ac.in/recruitments/faculty_positions","follow":false,"verified":true},
+{"name":"IIT Mandi","group":"IIT","url":"https://www.iitmandi.ac.in/careers.php","follow":false,"verified":true},
+{"name":"IIT BHU","group":"IIT","url":"https://facultyrecruitment.iitbhu.ac.in/","follow":false,"verified":true},
+{"name":"IIT Palakkad","group":"IIT","url":"https://facap.iitpkd.ac.in/","follow":false,"verified":true},
+{"name":"IIT Tirupati","group":"IIT","url":"https://iittp.ac.in/recruitment","follow":false,"verified":true},
+{"name":"IIT (ISM) Dhanbad","group":"IIT","url":"https://www.iitism.ac.in/ism_opening_main","follow":false,"verified":true},
+{"name":"IIT Bhilai","group":"IIT","url":"https://www.iitbhilai.ac.in/index.php?pid=rec_faculty","follow":false,"verified":true},
+{"name":"IIT Goa","group":"IIT","url":"https://iitgoa.ac.in/faculty-position/","follow":false,"verified":true},
+{"name":"IIT Jammu","group":"IIT","url":"https://iitjammu.ac.in/faculty-search-cum-selection","follow":false,"verified":true},
+{"name":"IIT Dharwad","group":"IIT","url":"https://www.iitdh.ac.in/Faculty_recruitment.php","follow":false,"verified":true}
 ]
