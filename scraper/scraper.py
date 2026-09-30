@@ -1,4 +1,4 @@
-"""Daily scraper: fetch pages -> extract ads -> diff against stored data -> write docs/data/*.json"""
+"""Daily scraper: fetch pages -> extract faculty ads -> diff against stored data -> write docs/data/*.json"""
 import hashlib, json, re, time, datetime as dt
 from pathlib import Path
 from urllib.parse import urljoin
@@ -11,8 +11,12 @@ ADS, CHG, META = DATA / "ads.json", DATA / "changes.json", DATA / "meta.json"
 HDR = {"User-Agent": "Mozilla/5.0 (compatible; FacultyTracker/1.0)"}
 TODAY = dt.date.today()
 
-KEY = re.compile(r"faculty|professor|recruit|advertis|teaching|vacanc|opening|special drive", re.I)
-SKIP = re.compile(r"result|shortlist|interview schedule|screening list|selected candidates|tender", re.I)
+FACULTY = re.compile(r"faculty|professor|lecturer|teaching (?:position|post)", re.I)
+EXCLUDE = re.compile(r"project|post-?\s?doc|postdoctoral|\bJRF\b|\bSRF\b|research (?:associate|scientist|fellow|assistant)|"
+                     r"non[\s-]?teaching|technical (?:support|assistant|officer)|\bstaff\b|question paper|walk-in|"
+                     r"intern(?:ship)?\b|tender|engineer|librarian|registrar|scientific|medical officer|consultant|"
+                     r"previous year|syllabus|scheme of exam", re.I)
+SKIP = re.compile(r"result|shortlist|interview schedule|screening list|selected candidates", re.I)
 NAV = re.compile(r"recruitment|faculty position|faculty opening|careers|jobs|vacanc", re.I)
 ADNO = re.compile(r"(?:advt\.?|advertisement|ref\.?|notification)\s*(?:no\.?|number)?\s*[:\-]?\s*([A-Za-z0-9][A-Za-z0-9/_.\-]{3,40})", re.I)
 MON = "jan feb mar apr may jun jul aug sep oct nov dec".split()
@@ -21,6 +25,9 @@ DEADLINE_CTX = re.compile(r"(last date|deadline|closing|closes|apply (?:on or )?
 DRIVES = [("OBC", r"\bOBC\b"), ("SC/ST", r"\bSC\s*/\s*ST\b|\bSC\b|\bST\b"),
           ("EWS", r"\bEWS\b"), ("PwD", r"\bPwD\b|\bPwBD\b|persons? with disabilit"),
           ("Special Drive", r"special (?:recruitment )?drive|backlog")]
+
+def is_faculty(text):
+    return bool(FACULTY.search(text)) and not EXCLUDE.search(text)
 
 def to_iso(m):
     d, mo, y = m.groups()
@@ -38,7 +45,7 @@ def positions(t):
 
 def fetch(url):
     r = requests.get(url, headers=HDR, timeout=30); r.raise_for_status()
-    return BeautifulSoup(r.text, "lxml")
+    return BeautifulSoup(r.content, "lxml")  # bytes in: let the parser detect the encoding
 
 def extract(inst, page_url, soup):
     ads = []
@@ -47,8 +54,10 @@ def extract(inst, page_url, soup):
         ctx = " ".join((a.parent.get_text(" ", strip=True) if a.parent else title).split())[:500]
         href = urljoin(page_url, a["href"])
         is_pdf = href.lower().split("?")[0].endswith(".pdf")
-        if not title or SKIP.search(title): continue
-        if not (KEY.search(title) or (is_pdf and KEY.search(ctx))): continue
+        if not title: continue
+        generic = len(title) < 25 or re.match(r"(click|download|view|read|details|pdf|here)", title, re.I)
+        basis = ctx if generic else title
+        if SKIP.search(basis) or not is_faculty(basis): continue
         text = f"{title} {ctx}"
         dates = [(m.start(), to_iso(m)) for m in DATE.finditer(text)]
         dates = [(p, d) for p, d in dates if d]
@@ -86,7 +95,8 @@ def uid(ad):
 def main():
     institutes = json.loads((ROOT / "scraper" / "institutes.json").read_text())
     first_run = not ADS.exists()
-    old = {} if first_run else {a["id"]: a for a in json.loads(ADS.read_text())}
+    # drop previously stored non-faculty items (postdocs, project posts, etc.)
+    old = {} if first_run else {a["id"]: a for a in json.loads(ADS.read_text()) if is_faculty(a["advertisement_title"])}
     now, changes, errors, seen = TODAY.isoformat(), [], {}, {}
     for inst in institutes:
         print("Scraping", inst["name"])
@@ -109,8 +119,8 @@ def main():
             if a["application_deadline"]: a["status"] = "Open" if a["application_deadline"] >= now else "Closed"
             seen[i] = a
     ads = sorted(seen.values(), key=lambda a: (a["first_seen"], a["institution"]), reverse=True)
-    ADS.write_text(json.dumps(ads, indent=1))
-    CHG.write_text(json.dumps({"date": now, "bootstrap": first_run, "changes": [] if first_run else changes}, indent=1))
+    ADS.write_text(json.dumps(ads, indent=1, ensure_ascii=False), encoding="utf-8")
+    CHG.write_text(json.dumps({"date": now, "bootstrap": first_run, "changes": [] if first_run else changes}, indent=1, ensure_ascii=False), encoding="utf-8")
     META.write_text(json.dumps({"updated": dt.datetime.now(dt.timezone.utc).isoformat(), "institutes": len(institutes), "errors": errors}, indent=1))
     print(f"Done: {len(ads)} ads, {len(changes)} changes, {len(errors)} failures")
 
