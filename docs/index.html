@@ -31,7 +31,7 @@ Promise.all([fetch("data/ads.json").then(r=>r.json()).catch(()=>[]),fetch("data/
  $("upd").textContent=m.updated?"Last updated "+new Date(m.updated).toLocaleString():"";
  [...new Set(ads.map(x=>x.institution))].sort().forEach(i=>$("inst").add(new Option(i,i)));render();});
 function render(){const q=$("q").value.toLowerCase();
- let r=ads.filter(x=>(!$("open").checked||x.status==="Open")&&(!$("inst").value||x.institution===$("inst").value)&&
+ let r=ads.filter(x=>(!$("open").checked?x.status!=="Closed":x.status==="Open")&&(!$("inst").value||x.institution===$("inst").value)&&
   (!$("pos").value||new RegExp("(^|, )"+$("pos").value).test(x.position))&&(!$("drv").value||x.special_drive.includes($("drv").value))&&
   (!q||[x.institution,x.position,x.advertisement_number,x.advertisement_title,x.special_drive].join(" ").toLowerCase().includes(q)));
  r.sort((a,b)=>(a[k]>b[k]?1:a[k]<b[k]?-1:0)*(asc?1:-1));
