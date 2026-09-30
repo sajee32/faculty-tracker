@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-30T19:59:39.364604+00:00",
+ "updated": "2026-09-30T20:05:26.764513+00:00",
  "institutes": 23,
  "errors": {
   "IIT Jodhpur": "HTTPSConnectionPool(host='iitj.ac.in', port=443): Max retries exceeded with url: /faculty-positions/en/faculty-positions (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))",
