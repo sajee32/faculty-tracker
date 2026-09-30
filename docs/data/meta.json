@@ -1,0 +1,10 @@
+{
+ "updated": "2026-09-30T19:21:32.269723+00:00",
+ "institutes": 22,
+ "errors": {
+  "IIT Kharagpur": "('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))",
+  "IIT Jodhpur": "HTTPSConnectionPool(host='www.iitj.ac.in', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))",
+  "IIT Bhubaneswar": "HTTPSConnectionPool(host='www.iitbbs.ac.in', port=443): Read timed out. (read timeout=30)",
+  "IIT Bhilai": "HTTPSConnectionPool(host='www.iitbhilai.ac.in', port=443): Max retries exceeded with url: / (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))"
+ }
+}
