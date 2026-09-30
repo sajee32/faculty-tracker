@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Faculty Recruitment Tracker</title>
+<style>
+:root{--bg:#f7f7f5;--fg:#1d1d1b;--card:#fff;--bd:#ddd;--ac:#1f5fbf;--mut:#666}
+@media(prefers-color-scheme:dark){:root{--bg:#161616;--fg:#eee;--card:#222;--bd:#3a3a3a;--ac:#6ea8ff;--mut:#999}}
+body{font:14px system-ui,sans-serif;background:var(--bg);color:var(--fg);padding:16px;max-width:1200px;margin:auto}
+h1{font-size:20px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:12px 0}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:12px}.card b{display:block;font-size:26px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}input,select{padding:6px;background:var(--card);color:var(--fg);border:1px solid var(--bd);border-radius:6px}
+input[type=search]{flex:1;min-width:200px}label{display:flex;align-items:center;gap:4px}
+.w{overflow-x:auto}table{border-collapse:collapse;width:100%;background:var(--card)}th,td{padding:8px;border-bottom:1px solid var(--bd);text-align:left;vertical-align:top}
+th{cursor:pointer}a{color:var(--ac)}.tag{background:var(--ac);color:#fff;border-radius:4px;padding:1px 6px;font-size:12px}.mut{color:var(--mut);font-size:12px}
+</style></head><body>
+<h1>Faculty Recruitment Tracker</h1><div class="mut" id="upd"></div>
+<div class="cards"><div class="card">Institutes monitored<b id="c1">–</b></div><div class="card">Open recruitments<b id="c2">–</b></div>
+<div class="card">New this week<b id="c3">–</b></div><div class="card">Special drives<b id="c4">–</b></div></div>
+<div class="bar"><input type="search" id="q" placeholder="Search institute, position, advertisement no., keywords">
+<select id="inst"><option value="">All institutes</option></select>
+<select id="pos"><option value="">All positions</option><option>Assistant Professor</option><option>Associate Professor</option><option>Professor</option></select>
+<select id="drv"><option value="">All drives</option><option>OBC</option><option>SC/ST</option><option>EWS</option><option>PwD</option></select>
+<label><input type="checkbox" id="open"> Open only</label></div>
+<div class="w"><table><thead><tr><th data-k="institution">Institute</th><th data-k="position">Position</th><th data-k="advertisement_number">Adv. No.</th><th data-k="status">Status</th><th data-k="application_deadline">Deadline</th><th data-k="special_drive">Special drive</th><th data-k="new">New</th></tr></thead><tbody id="tb"></tbody></table></div>
+<script>
+let ads=[],k="new",asc=false;const $=i=>document.getElementById(i);
+const week=new Date(Date.now()-7*864e5).toISOString().slice(0,10);
+const esc=s=>String(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+Promise.all([fetch("data/ads.json").then(r=>r.json()).catch(()=>[]),fetch("data/meta.json").then(r=>r.json()).catch(()=>({}))]).then(([a,m])=>{
+ ads=a.map(x=>({...x,new:x.first_seen>=week}));
+ $("c1").textContent=m.institutes||new Set(ads.map(x=>x.institution)).size;
+ $("c2").textContent=ads.filter(x=>x.status==="Open").length;$("c3").textContent=ads.filter(x=>x.new).length;$("c4").textContent=ads.filter(x=>x.special_drive).length;
+ $("upd").textContent=m.updated?"Last updated "+new Date(m.updated).toLocaleString():"";
+ [...new Set(ads.map(x=>x.institution))].sort().forEach(i=>$("inst").add(new Option(i,i)));render();});
+function render(){const q=$("q").value.toLowerCase();
+ let r=ads.filter(x=>(!$("open").checked||x.status==="Open")&&(!$("inst").value||x.institution===$("inst").value)&&
+  (!$("pos").value||new RegExp("(^|, )"+$("pos").value).test(x.position))&&(!$("drv").value||x.special_drive.includes($("drv").value))&&
+  (!q||[x.institution,x.position,x.advertisement_number,x.advertisement_title,x.special_drive].join(" ").toLowerCase().includes(q)));
+ r.sort((a,b)=>(a[k]>b[k]?1:a[k]<b[k]?-1:0)*(asc?1:-1));
+ $("tb").innerHTML=r.map(x=>`<tr><td>${esc(x.institution)}</td><td>${esc(x.position)||"—"}<div class=mut><a href="${esc(x.pdf_url||x.recruitment_url)}" target="_blank" rel="noopener">${esc(x.advertisement_title.slice(0,90))}</a></div></td><td>${esc(x.advertisement_number)}</td><td>${x.status}</td><td>${esc(x.application_deadline)}</td><td>${esc(x.special_drive)}</td><td>${x.new?'<span class=tag>NEW</span>':""}</td></tr>`).join("")||"<tr><td colspan=7>No matching advertisements.</td></tr>";}
+document.querySelectorAll("#q,select,#open").forEach(e=>e.oninput=render);
+document.querySelectorAll("th").forEach(t=>t.onclick=()=>{asc=k===t.dataset.k?!asc:true;k=t.dataset.k;render()});
+</script></body></html>

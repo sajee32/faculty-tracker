@@ -1,0 +1,156 @@
+[
+ {
+  "name": "IIT Bombay",
+  "group": "IIT",
+  "url": "https://www.iitb.ac.in/",
+  "follow": true,
+  "verified": false
+ },
+ {
+  "name": "IIT Delhi",
+  "group": "IIT",
+  "url": "https://www.iitd.ac.in/",
+  "follow": true,
+  "verified": false
+ },
+ {
+  "name": "IIT Madras",
+  "group": "IIT",
+  "url": "https://www.iitm.ac.in/",
+  "follow": true,
+  "verified": false
+ },
+ {
+  "name": "IIT Kanpur",
+  "group": "IIT",
+  "url": "https://www.iitk.ac.in/",
+  "follow": true,
+  "verified": false
+ },
+ {
+  "name": "IIT Kharagpur",
+  "group": "IIT",
+  "url": "https://www.iitkgp.ac.in/",
+  "follow": true,
+  "verified": false
+ },
+ {
+  "name": "IIT Roorkee",
+  "group": "IIT",
+  "url": "https://www.iitr.ac.in/",
+  "follow": true,
+  "verified": false
+ },
+ {
+  "name": "IIT Guwahati",
+  "group": "IIT",
+  "url": "https://www.iitg.ac.in/",
+  "follow": true,
+  "verified": false
+ },
+ {
+  "name": "IIT Hyderabad",
+  "group": "IIT",
+  "url": "https://www.iith.ac.in/",
+  "follow": true,
+  "verified": false
+ },
+ {
+  "name": "IIT Gandhinagar",
+  "group": "IIT",
+  "url": "https://www.iitgn.ac.in/",
+  "follow": true,
+  "verified": false
+ },
+ {
+  "name": "IIT Indore",
+  "group": "IIT",
+  "url": "https://www.iiti.ac.in/",
+  "follow": true,
+  "verified": false
+ },
+ {
+  "name": "IIT Jodhpur",
+  "group": "IIT",
+  "url": "https://www.iitj.ac.in/",
+  "follow": true,
+  "verified": false
+ },
+ {
+  "name": "IIT Mandi",
+  "group": "IIT",
+  "url": "https://www.iitmandi.ac.in/",
+  "follow": true,
+  "verified": false
+ },
+ {
+  "name": "IIT Ropar",
+  "group": "IIT",
+  "url": "https://www.iitrpr.ac.in/",
+  "follow": true,
+  "verified": false
+ },
+ {
+  "name": "IIT Patna",
+  "group": "IIT",
+  "url": "https://www.iitp.ac.in/",
+  "follow": true,
+  "verified": false
+ },
+ {
+  "name": "IIT Bhubaneswar",
+  "group": "IIT",
+  "url": "https://www.iitbbs.ac.in/",
+  "follow": true,
+  "verified": false
+ },
+ {
+  "name": "IIT BHU",
+  "group": "IIT",
+  "url": "https://www.iitbhu.ac.in/",
+  "follow": true,
+  "verified": false
+ },
+ {
+  "name": "IIT Dharwad",
+  "group": "IIT",
+  "url": "https://www.iitdh.ac.in/",
+  "follow": true,
+  "verified": false
+ },
+ {
+  "name": "IIT Goa",
+  "group": "IIT",
+  "url": "https://www.iitgoa.ac.in/",
+  "follow": true,
+  "verified": false
+ },
+ {
+  "name": "IIT Jammu",
+  "group": "IIT",
+  "url": "https://www.iitjammu.ac.in/",
+  "follow": true,
+  "verified": false
+ },
+ {
+  "name": "IIT Bhilai",
+  "group": "IIT",
+  "url": "https://www.iitbhilai.ac.in/",
+  "follow": true,
+  "verified": false
+ },
+ {
+  "name": "IIT Palakkad",
+  "group": "IIT",
+  "url": "https://www.iitpkd.ac.in/",
+  "follow": true,
+  "verified": false
+ },
+ {
+  "name": "IIT Tirupati",
+  "group": "IIT",
+  "url": "https://www.iittp.ac.in/",
+  "follow": true,
+  "verified": false
+ }
+]

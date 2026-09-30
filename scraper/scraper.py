@@ -1,0 +1,118 @@
+"""Daily scraper: fetch pages -> extract ads -> diff against stored data -> write docs/data/*.json"""
+import hashlib, json, re, time, datetime as dt
+from pathlib import Path
+from urllib.parse import urljoin
+import requests
+from bs4 import BeautifulSoup
+
+ROOT = Path(__file__).resolve().parent.parent
+DATA = ROOT / "docs" / "data"; DATA.mkdir(parents=True, exist_ok=True)
+ADS, CHG, META = DATA / "ads.json", DATA / "changes.json", DATA / "meta.json"
+HDR = {"User-Agent": "Mozilla/5.0 (compatible; FacultyTracker/1.0)"}
+TODAY = dt.date.today()
+
+KEY = re.compile(r"faculty|professor|recruit|advertis|teaching|vacanc|opening|special drive", re.I)
+SKIP = re.compile(r"result|shortlist|interview schedule|screening list|selected candidates|tender", re.I)
+NAV = re.compile(r"recruitment|faculty position|faculty opening|careers|jobs|vacanc", re.I)
+ADNO = re.compile(r"(?:advt\.?|advertisement|ref\.?|notification)\s*(?:no\.?|number)?\s*[:\-]?\s*([A-Za-z0-9][A-Za-z0-9/_.\-]{3,40})", re.I)
+MON = "jan feb mar apr may jun jul aug sep oct nov dec".split()
+DATE = re.compile(r"\b(\d{1,2})[\s./\-]+([A-Za-z]{3,9}|\d{1,2})[\s./\-,]+(\d{4})\b")
+DEADLINE_CTX = re.compile(r"(last date|deadline|closing|closes|apply (?:on or )?before|till|upto|up to)", re.I)
+DRIVES = [("OBC", r"\bOBC\b"), ("SC/ST", r"\bSC\s*/\s*ST\b|\bSC\b|\bST\b"),
+          ("EWS", r"\bEWS\b"), ("PwD", r"\bPwD\b|\bPwBD\b|persons? with disabilit"),
+          ("Special Drive", r"special (?:recruitment )?drive|backlog")]
+
+def to_iso(m):
+    d, mo, y = m.groups()
+    try:
+        mo = int(mo) if mo.isdigit() else MON.index(mo[:3].lower()) + 1
+        return dt.date(int(y), mo, int(d)).isoformat()
+    except (ValueError, IndexError):
+        return ""
+
+def positions(t):
+    found = [p for p in ("Assistant Professor", "Associate Professor", "Professor of Practice") if re.search(p, t, re.I)]
+    rest = re.sub(r"(Assistant|Associate) Professor|Professor of Practice", "", t, flags=re.I)
+    if re.search(r"\bProfessor\b", rest, re.I): found.append("Professor")
+    return ", ".join(found)
+
+def fetch(url):
+    r = requests.get(url, headers=HDR, timeout=30); r.raise_for_status()
+    return BeautifulSoup(r.text, "lxml")
+
+def extract(inst, page_url, soup):
+    ads = []
+    for a in soup.find_all("a", href=True):
+        title = " ".join(a.get_text(" ", strip=True).split())
+        ctx = " ".join((a.parent.get_text(" ", strip=True) if a.parent else title).split())[:500]
+        href = urljoin(page_url, a["href"])
+        is_pdf = href.lower().split("?")[0].endswith(".pdf")
+        if not title or SKIP.search(title): continue
+        if not (KEY.search(title) or (is_pdf and KEY.search(ctx))): continue
+        text = f"{title} {ctx}"
+        dates = [(m.start(), to_iso(m)) for m in DATE.finditer(text)]
+        dates = [(p, d) for p, d in dates if d]
+        deadline = ""
+        for p, d in dates:
+            if DEADLINE_CTX.search(text[max(0, p - 40):p]): deadline = d
+        pub = next((d for _, d in dates if d != deadline), "")
+        m = ADNO.search(text)
+        status = "Unknown" if not deadline else ("Open" if deadline >= TODAY.isoformat() else "Closed")
+        ads.append({"institution": inst["name"], "position": positions(text),
+                    "advertisement_number": m.group(1).rstrip(".,") if m else "",
+                    "advertisement_title": title[:250], "publication_date": pub,
+                    "application_deadline": deadline, "status": status,
+                    "special_drive": ", ".join(n for n, rx in DRIVES if re.search(rx, text, re.I)),
+                    "recruitment_url": page_url if is_pdf else href, "pdf_url": href if is_pdf else ""})
+    return ads
+
+def scrape(inst):
+    pages, ads = [inst["url"]], []
+    soup = fetch(inst["url"])
+    if inst.get("follow"):
+        for a in soup.find_all("a", href=True):
+            if NAV.search(a.get_text(" ", strip=True)) and not a["href"].lower().endswith(".pdf"):
+                u = urljoin(inst["url"], a["href"])
+                if u not in pages and len(pages) < 4: pages.append(u)
+    for i, u in enumerate(pages):
+        try: ads += extract(inst, u, soup if i == 0 else fetch(u)); time.sleep(1)
+        except Exception as e: print(f"  warn {u}: {e}")
+    return ads
+
+def uid(ad):
+    base = ad["pdf_url"] or (ad["advertisement_number"] or ad["advertisement_title"].lower())
+    return hashlib.sha1(f"{ad['institution']}|{base}".encode()).hexdigest()[:12]
+
+def main():
+    institutes = json.loads((ROOT / "scraper" / "institutes.json").read_text())
+    first_run = not ADS.exists()
+    old = {} if first_run else {a["id"]: a for a in json.loads(ADS.read_text())}
+    now, changes, errors, seen = TODAY.isoformat(), [], {}, {}
+    for inst in institutes:
+        print("Scraping", inst["name"])
+        try: found = scrape(inst)
+        except Exception as e: errors[inst["name"]] = str(e); print("  FAILED", e); continue
+        for ad in found:
+            ad["id"] = uid(ad); prev = old.get(ad["id"])
+            if not prev:
+                ad.update(first_seen=now, last_seen=now, pdf_history=[ad["pdf_url"]] if ad["pdf_url"] else [])
+                changes.append({"new": True, "type": "new", **{k: ad[k] for k in ("institution", "position", "advertisement_number", "application_deadline", "recruitment_url", "pdf_url", "advertisement_title", "special_drive")}})
+            else:
+                ad["first_seen"], ad["last_seen"], ad["pdf_history"] = prev["first_seen"], now, prev.get("pdf_history", [])
+                for field, typ in (("application_deadline", "deadline_changed"), ("pdf_url", "new_pdf"), ("advertisement_title", "updated")):
+                    if ad[field] and ad[field] != prev[field]:
+                        changes.append({"new": False, "type": typ, "institution": ad["institution"], "advertisement_number": ad["advertisement_number"], "old": prev[field], "current": ad[field], "recruitment_url": ad["recruitment_url"]})
+                if ad["pdf_url"] and ad["pdf_url"] not in ad["pdf_history"]: ad["pdf_history"].append(ad["pdf_url"])
+            seen[ad["id"]] = ad
+    for i, a in old.items():  # keep history; failed institutes stay untouched
+        if i not in seen:
+            if a["application_deadline"]: a["status"] = "Open" if a["application_deadline"] >= now else "Closed"
+            seen[i] = a
+    ads = sorted(seen.values(), key=lambda a: (a["first_seen"], a["institution"]), reverse=True)
+    ADS.write_text(json.dumps(ads, indent=1))
+    CHG.write_text(json.dumps({"date": now, "bootstrap": first_run, "changes": [] if first_run else changes}, indent=1))
+    META.write_text(json.dumps({"updated": dt.datetime.now(dt.timezone.utc).isoformat(), "institutes": len(institutes), "errors": errors}, indent=1))
+    print(f"Done: {len(ads)} ads, {len(changes)} changes, {len(errors)} failures")
+
+if __name__ == "__main__":
+    main()
