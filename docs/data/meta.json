@@ -1,8 +1,8 @@
 {
- "updated": "2026-10-04T13:08:37.008832+00:00",
+ "updated": "2026-10-05T15:49:56.731736+00:00",
  "institutes": 23,
  "errors": {
-  "IIT Bombay": "503 Server Error: Backend fetch failed for url: https://faculty.iitb.ac.in/apply-iitb/faculty",
+  "IIT Madras": "HTTPSConnectionPool(host='facapp.iitm.ac.in', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='facapp.iitm.ac.in', port=443) at 0x7f1fe5e46780>, 'Connection to facapp.iitm.ac.in timed out. (connect timeout=30)'))",
   "IIT Jodhpur": "HTTPSConnectionPool(host='iitj.ac.in', port=443): Max retries exceeded with url: /faculty-positions/en/faculty-positions (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))",
   "IIT Bhilai": "HTTPSConnectionPool(host='iitbhilai.ac.in', port=443): Max retries exceeded with url: /index.php?pid=rec_faculty (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))",
   "IIT Dharwad": "HTTPSConnectionPool(host='www.portal.iitdh.ac.in', port=443): Max retries exceeded with url: /faculty-recruitment (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.portal.iitdh.ac.in'. (_ssl.c:1010)\")))"
