@@ -1,5 +1,5 @@
 {
- "date": "2026-10-05",
+ "date": "2026-10-06",
  "bootstrap": false,
  "changes": [
   {
@@ -24,6 +24,18 @@
    "recruitment_url": "https://faculty.iitb.ac.in/apply-iitb/faculty",
    "pdf_url": "",
    "advertisement_title": "Resources",
+   "special_drive": ""
+  },
+  {
+   "new": true,
+   "type": "new",
+   "institution": "IIT Madras",
+   "position": "Assistant Professor",
+   "advertisement_number": "IITM/R/1/2026",
+   "application_deadline": "",
+   "recruitment_url": "https://facapp.iitm.ac.in/2026ra",
+   "pdf_url": "",
+   "advertisement_title": "Apply Now",
    "special_drive": ""
   },
   {
