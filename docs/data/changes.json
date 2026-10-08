@@ -1,60 +1,30 @@
 {
- "date": "2026-10-07",
+ "date": "2026-10-08",
  "bootstrap": false,
  "changes": [
   {
    "new": true,
    "type": "new",
-   "institution": "IIT Bombay",
-   "position": "",
-   "advertisement_number": "",
+   "institution": "IIT Madras",
+   "position": "Assistant Professor",
+   "advertisement_number": "IITM/R/1/2026",
    "application_deadline": "",
-   "recruitment_url": "https://faculty.iitb.ac.in/apply-iitb/faculty",
+   "recruitment_url": "https://facapp.iitm.ac.in/2026ra",
    "pdf_url": "",
-   "advertisement_title": "Introduction",
+   "advertisement_title": "Apply Now",
    "special_drive": ""
   },
   {
    "new": true,
    "type": "new",
-   "institution": "IIT Bombay",
-   "position": "",
-   "advertisement_number": "",
-   "application_deadline": "",
-   "recruitment_url": "https://faculty.iitb.ac.in/apply-iitb/faculty",
-   "pdf_url": "",
-   "advertisement_title": "Resources",
-   "special_drive": ""
-  },
-  {
-   "new": true,
-   "type": "new",
-   "institution": "IIT Kanpur",
-   "position": "",
-   "advertisement_number": "",
-   "application_deadline": "",
-   "recruitment_url": "http://iitk.ac.in/",
-   "pdf_url": "",
-   "advertisement_title": "http://www.iitk.ac.in",
-   "special_drive": ""
-  },
-  {
-   "new": false,
-   "type": "updated",
    "institution": "IIT Delhi",
+   "position": "Assistant Professor, Professor",
    "advertisement_number": "inviting",
-   "old": "For Half-time Foreign Faculty (non-OCI) Appointment",
-   "current": "For Associate & Full Professor",
-   "recruitment_url": "https://home.iitd.ac.in/jobs-iitd/index.php#inline_content_faculty2"
-  },
-  {
-   "new": false,
-   "type": "updated",
-   "institution": "IIT Delhi",
-   "advertisement_number": "inviting",
-   "old": "For Half-time Foreign Faculty (non-OCI) Appointment",
-   "current": "Special Drive Advertisement For Assistant Professor",
-   "recruitment_url": "https://home.iitd.ac.in/jobs-iitd/index.php#inline_content_faculty30"
+   "application_deadline": "",
+   "recruitment_url": "https://home.iitd.ac.in/jobs-iitd/index.php#inline_content_faculty30",
+   "pdf_url": "",
+   "advertisement_title": "Special Drive Advertisement For Assistant Professor",
+   "special_drive": "Special Drive"
   },
   {
    "new": true,
@@ -389,18 +359,6 @@
    "application_deadline": "",
    "recruitment_url": "https://www.iitbbs.ac.in/faculty-openings.php",
    "pdf_url": "",
-   "advertisement_title": "Coordinators",
-   "special_drive": ""
-  },
-  {
-   "new": true,
-   "type": "new",
-   "institution": "IIT Bhubaneswar",
-   "position": "",
-   "advertisement_number": "",
-   "application_deadline": "",
-   "recruitment_url": "https://www.iitbbs.ac.in/faculty-openings.php",
-   "pdf_url": "",
    "advertisement_title": "Placements",
    "special_drive": ""
   },
@@ -413,67 +371,7 @@
    "application_deadline": "",
    "recruitment_url": "https://www.iitbbs.ac.in/faculty-openings.php",
    "pdf_url": "",
-   "advertisement_title": "Coordinators",
-   "special_drive": ""
-  },
-  {
-   "new": true,
-   "type": "new",
-   "institution": "IIT Bhubaneswar",
-   "position": "",
-   "advertisement_number": "",
-   "application_deadline": "",
-   "recruitment_url": "https://www.iitbbs.ac.in/faculty-openings.php",
-   "pdf_url": "",
    "advertisement_title": "Placements",
-   "special_drive": ""
-  },
-  {
-   "new": true,
-   "type": "new",
-   "institution": "IIT Bhubaneswar",
-   "position": "",
-   "advertisement_number": "",
-   "application_deadline": "",
-   "recruitment_url": "https://www.iitbbs.ac.in/faculty-openings.php",
-   "pdf_url": "",
-   "advertisement_title": "Coordinators",
-   "special_drive": ""
-  },
-  {
-   "new": true,
-   "type": "new",
-   "institution": "IIT Gandhinagar",
-   "position": "",
-   "advertisement_number": "",
-   "application_deadline": "",
-   "recruitment_url": "https://iitgn.ac.in/careers/faculty-rolling",
-   "pdf_url": "https://iitgn.ac.in/assets/pdfs/careers/Faculty-Recruitment-2023.pdf",
-   "advertisement_title": "Brochure",
-   "special_drive": ""
-  },
-  {
-   "new": true,
-   "type": "new",
-   "institution": "IIT Gandhinagar",
-   "position": "",
-   "advertisement_number": "",
-   "application_deadline": "",
-   "recruitment_url": "https://news.iitgn.ac.in/category/achievements/",
-   "pdf_url": "",
-   "advertisement_title": "View More",
-   "special_drive": ""
-  },
-  {
-   "new": true,
-   "type": "new",
-   "institution": "IIT Gandhinagar",
-   "position": "",
-   "advertisement_number": "",
-   "application_deadline": "",
-   "recruitment_url": "https://iitgn.ac.in/careers/departments",
-   "pdf_url": "",
-   "advertisement_title": "Departments @IITGN",
    "special_drive": ""
   },
   {
@@ -486,6 +384,18 @@
    "recruitment_url": "https://www.iiti.ac.in/careers/teaching_positions",
    "pdf_url": "",
    "advertisement_title": "View All",
+   "special_drive": ""
+  },
+  {
+   "new": true,
+   "type": "new",
+   "institution": "IIT Mandi",
+   "position": "",
+   "advertisement_number": "",
+   "application_deadline": "",
+   "recruitment_url": "javascript:void(0)",
+   "pdf_url": "",
+   "advertisement_title": "Faculty",
    "special_drive": ""
   },
   {
