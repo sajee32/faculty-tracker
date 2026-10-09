@@ -1,5 +1,5 @@
 {
- "date": "2026-10-08",
+ "date": "2026-10-09",
  "bootstrap": false,
  "changes": [
   {
@@ -13,18 +13,6 @@
    "pdf_url": "",
    "advertisement_title": "Apply Now",
    "special_drive": ""
-  },
-  {
-   "new": true,
-   "type": "new",
-   "institution": "IIT Delhi",
-   "position": "Assistant Professor, Professor",
-   "advertisement_number": "inviting",
-   "application_deadline": "",
-   "recruitment_url": "https://home.iitd.ac.in/jobs-iitd/index.php#inline_content_faculty30",
-   "pdf_url": "",
-   "advertisement_title": "Special Drive Advertisement For Assistant Professor",
-   "special_drive": "Special Drive"
   },
   {
    "new": true,
