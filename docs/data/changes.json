@@ -1,5 +1,5 @@
 {
- "date": "2026-10-14",
+ "date": "2026-10-15",
  "bootstrap": false,
  "changes": [
   {
@@ -360,6 +360,18 @@
    "recruitment_url": "https://www.iitbbs.ac.in/faculty-openings.php",
    "pdf_url": "",
    "advertisement_title": "Placements",
+   "special_drive": ""
+  },
+  {
+   "new": true,
+   "type": "new",
+   "institution": "IIT Hyderabad",
+   "position": "",
+   "advertisement_number": "",
+   "application_deadline": "",
+   "recruitment_url": "https://iith.ac.in/assets/files/careers/faculty/https://careers.iith.ac.in/",
+   "pdf_url": "",
+   "advertisement_title": "Regular Recruitment Drive for various Faculty positions. Please visit our carrier portal for more details.",
    "special_drive": ""
   },
   {
