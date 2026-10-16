@@ -1,19 +1,7 @@
 {
- "date": "2026-10-15",
+ "date": "2026-10-16",
  "bootstrap": false,
  "changes": [
-  {
-   "new": true,
-   "type": "new",
-   "institution": "IIT Madras",
-   "position": "Assistant Professor",
-   "advertisement_number": "IITM/R/1/2026",
-   "application_deadline": "",
-   "recruitment_url": "https://facapp.iitm.ac.in/2026ra",
-   "pdf_url": "",
-   "advertisement_title": "Apply Now",
-   "special_drive": ""
-  },
   {
    "new": true,
    "type": "new",
@@ -55,7 +43,7 @@
    "type": "new",
    "institution": "IIT Delhi",
    "position": "Assistant Professor",
-   "advertisement_number": "IITD/2025/AP-1",
+   "advertisement_number": "Faculty",
    "application_deadline": "",
    "recruitment_url": "https://home.iitd.ac.in/jobs-iitd/index.php",
    "pdf_url": "https://home.iitd.ac.in/jobs-iitd/uploads/IITD 2025 AP-1 Rollling advt FINAL APR25.pdf",
@@ -366,12 +354,24 @@
    "new": true,
    "type": "new",
    "institution": "IIT Hyderabad",
+   "position": "Assistant Professor, Professor",
+   "advertisement_number": "",
+   "application_deadline": "2026-11-12",
+   "recruitment_url": "https://iith.ac.in/careers/",
+   "pdf_url": "https://careers.iith.ac.in/documents/IITH_Faculty_Recruitment_Advt-Oct_2026-final.pdf",
+   "advertisement_title": "Official Faculty Recruitment Advertisement (PDF)",
+   "special_drive": ""
+  },
+  {
+   "new": true,
+   "type": "new",
+   "institution": "IIT Hyderabad",
    "position": "",
    "advertisement_number": "",
    "application_deadline": "",
-   "recruitment_url": "https://iith.ac.in/assets/files/careers/faculty/https://careers.iith.ac.in/",
+   "recruitment_url": "mailto:faculty.recruitment@iith.ac.in",
    "pdf_url": "",
-   "advertisement_title": "Regular Recruitment Drive for various Faculty positions. Please visit our carrier portal for more details.",
+   "advertisement_title": "faculty.recruitment@iith.ac.in",
    "special_drive": ""
   },
   {
