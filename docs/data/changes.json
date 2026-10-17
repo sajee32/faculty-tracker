@@ -1,5 +1,5 @@
 {
- "date": "2026-10-16",
+ "date": "2026-10-17",
  "bootstrap": false,
  "changes": [
   {
@@ -43,7 +43,7 @@
    "type": "new",
    "institution": "IIT Delhi",
    "position": "Assistant Professor",
-   "advertisement_number": "Faculty",
+   "advertisement_number": "IITD/2025/AP-1",
    "application_deadline": "",
    "recruitment_url": "https://home.iitd.ac.in/jobs-iitd/index.php",
    "pdf_url": "https://home.iitd.ac.in/jobs-iitd/uploads/IITD 2025 AP-1 Rollling advt FINAL APR25.pdf",
@@ -348,30 +348,6 @@
    "recruitment_url": "https://www.iitbbs.ac.in/faculty-openings.php",
    "pdf_url": "",
    "advertisement_title": "Placements",
-   "special_drive": ""
-  },
-  {
-   "new": true,
-   "type": "new",
-   "institution": "IIT Hyderabad",
-   "position": "Assistant Professor, Professor",
-   "advertisement_number": "",
-   "application_deadline": "2026-11-12",
-   "recruitment_url": "https://iith.ac.in/careers/",
-   "pdf_url": "https://careers.iith.ac.in/documents/IITH_Faculty_Recruitment_Advt-Oct_2026-final.pdf",
-   "advertisement_title": "Official Faculty Recruitment Advertisement (PDF)",
-   "special_drive": ""
-  },
-  {
-   "new": true,
-   "type": "new",
-   "institution": "IIT Hyderabad",
-   "position": "",
-   "advertisement_number": "",
-   "application_deadline": "",
-   "recruitment_url": "mailto:faculty.recruitment@iith.ac.in",
-   "pdf_url": "",
-   "advertisement_title": "faculty.recruitment@iith.ac.in",
    "special_drive": ""
   },
   {
