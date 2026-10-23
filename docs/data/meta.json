@@ -1,9 +1,11 @@
 {
- "updated": "2026-10-22T12:55:00.115458+00:00",
+ "updated": "2026-10-23T12:34:26.229399+00:00",
  "institutes": 23,
  "errors": {
+  "IIT Bombay": "HTTPSConnectionPool(host='faculty.iitb.ac.in', port=443): Max retries exceeded with url: /apply-iitb/faculty (Caused by NameResolutionError(\"HTTPSConnection(host='faculty.iitb.ac.in', port=443): Failed to resolve 'faculty.iitb.ac.in' ([Errno -2] Name or service not known)\"))",
   "IIT Jodhpur": "HTTPSConnectionPool(host='iitj.ac.in', port=443): Max retries exceeded with url: /faculty-positions/en/faculty-positions (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))",
   "IIT Bhilai": "HTTPSConnectionPool(host='iitbhilai.ac.in', port=443): Max retries exceeded with url: /index.php?pid=rec_faculty (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))",
+  "IIT Goa": "HTTPSConnectionPool(host='iitgoa.ac.in', port=443): Max retries exceeded with url: /faculty-position/ (Caused by NewConnectionError(\"HTTPSConnection(host='iitgoa.ac.in', port=443): Failed to establish a new connection: [Errno 111] Connection refused\"))",
   "IIT Dharwad": "HTTPSConnectionPool(host='www.portal.iitdh.ac.in', port=443): Max retries exceeded with url: /faculty-recruitment (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.portal.iitdh.ac.in'. (_ssl.c:1010)\")))"
  }
 }
