@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29T14:03:41.709246+00:00",
+ "updated": "2026-10-30T13:59:43.972684+00:00",
  "institutes": 23,
  "errors": {
   "IIT Bombay": "HTTPSConnectionPool(host='faculty.iitb.ac.in', port=443): Max retries exceeded with url: /apply-iitb/faculty (Caused by NameResolutionError(\"HTTPSConnection(host='faculty.iitb.ac.in', port=443): Failed to resolve 'faculty.iitb.ac.in' ([Errno -2] Name or service not known)\"))",
