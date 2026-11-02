@@ -1,10 +1,9 @@
 {
- "updated": "2026-11-01T14:15:12.715941+00:00",
+ "updated": "2026-11-02T16:59:19.787302+00:00",
  "institutes": 23,
  "errors": {
   "IIT Jodhpur": "HTTPSConnectionPool(host='iitj.ac.in', port=443): Max retries exceeded with url: /faculty-positions/en/faculty-positions (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))",
   "IIT Bhilai": "HTTPSConnectionPool(host='iitbhilai.ac.in', port=443): Max retries exceeded with url: /index.php?pid=rec_faculty (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)')))",
-  "IIT Jammu": "HTTPSConnectionPool(host='www.iitjammu.ac.in', port=443): Max retries exceeded with url: /faculty-search-cum-selection (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.iitjammu.ac.in', port=443) at 0x71f56b10f890>, 'Connection to www.iitjammu.ac.in timed out. (connect timeout=30)'))",
   "IIT Dharwad": "HTTPSConnectionPool(host='www.portal.iitdh.ac.in', port=443): Max retries exceeded with url: /faculty-recruitment (Caused by SSLError(SSLCertVerificationError(1, \"[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.portal.iitdh.ac.in'. (_ssl.c:1010)\")))"
  }
 }
