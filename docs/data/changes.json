@@ -1,5 +1,5 @@
 {
- "date": "2026-11-07",
+ "date": "2026-11-08",
  "bootstrap": false,
  "changes": [
   {
@@ -31,7 +31,7 @@
    "type": "new",
    "institution": "IIT Delhi",
    "position": "Assistant Professor",
-   "advertisement_number": "IITD/2025/AP-2",
+   "advertisement_number": "Faculty",
    "application_deadline": "",
    "recruitment_url": "https://home.iitd.ac.in/jobs-iitd/index.php",
    "pdf_url": "https://home.iitd.ac.in/jobs-iitd/uploads/Rollling Advt. IITD 2025 AP-2.pdf",
@@ -385,6 +385,18 @@
    "pdf_url": "",
    "advertisement_title": "Skip to main content",
    "special_drive": ""
+  },
+  {
+   "new": true,
+   "type": "new",
+   "institution": "IIT Goa",
+   "position": "Assistant Professor",
+   "advertisement_number": "IIT Goa/Rect/FAC/SRD5/AP/26-01/Schools",
+   "application_deadline": "2026-04-15",
+   "recruitment_url": "https://iitgoa.ac.in/faculty-position/",
+   "pdf_url": "https://iitgoa.ac.in/wp-content/uploads/IITGoa_Corrigendum_Advt.-SRD5.pdf",
+   "advertisement_title": "Corrigendum",
+   "special_drive": "OBC, SC/ST, EWS, Special Drive"
   }
  ]
 }
